@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+*{
+margin:0%;
+padding:0%;
+box-sizing: border-box;
+}
+html,body{
+width: 100%;
+height: 100%;
+}
+:root{
+    --bg-color: rgba(0, 0, 0, 1);
+    --text-color: rgb(255, 255, 255);
+    --task-color: rgba(0, 0, 0, 0.33);
+    --btn-color: rgba(155, 32, 32, 0.563);
+    --bg-button-color: #212020;
+    /* padding variables */
+    --nav-pd: 1rem 2rem;
+    --sec-pd: 1rem 2rem;
+    --pd-sm: .7rem;
+    --pd-md: 1rem;
+    --pd-lg: 2rem;
+    --pd-xl: 3rem;
+    --pd-xxl:5rem;
+
+    /* border radius variables */
+    --br-xs: .2rem;
+    --br-sm: .3rem;
+    --br-md: .5rem;
+    --br-lg: .8rem;
+    --br-xl: 1rem;
+    --br-xxl: 1.5rem;
+    /* font size variables */
+    --fs-xs: .6rem;
+    --fs-sm: .9rem;
+    --fs-md: 1.4rem;
+    --fs-lg: 1.8rem;
+    --fs-xl: 2.5rem;
+    --fs-xxl: 3.5rem;
+   
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Nunito', sans-serif;
+    
+}
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+}
+
+nav{
+    padding: var(--nav-pd);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+}
+
+nav button{
+    background-color: var(--bg-button-color);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    padding: var(--pd-sm) var(--pd-md);
+     cursor: pointer;
+     border-radius: var(--br-md);
+}
+section {
+    padding: var(--sec-pd);
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: var(--pd-lg);
+}
+
+section .task-column{
+    background-color: var(--bg-button-color);
+    flex-grow: 1;
+    width: 100%;
+    padding: var(--pd-lg);
+    border-radius: var(--br-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--pd-md);
+    transition: all 0.7s cubic-bezier(0.19 1, 0.22 1);
+}
+section .task-column.hover-over{
+    border: 2px dashed var(--text-color);
+    scale: 1.05;
+}
+section .task-column .heading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+ }
+section .task-column .task {
+    background-color: var(--task-color);
+    padding: var(--pd-md);
+    border-radius: var(--br-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--pd-sm);
+    color: var(--text-color);
+    cursor: grab;
+}
+section .task-column .task button {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--pd-sm) var(--pd-md);
+    border-radius: var(--br-sm);
+    border: none;
+    outline: none;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+}
+
+.modal{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal.active{display: flex;}
+.modal .bg{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(61,61,61,0.404);
+    backdrop-filter: blur(.5rem); 
+} 
+.modal .center{
+    background-color: var(--bg-button-color);
+    padding: var(--pd-lg);
+    border-radius: var(--br-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--pd-md);
+    z-index: 10;
+}
+.modal .center input,
+.modal .center textarea,
+.modal .center select {
+    background-color: var(--task-color);
+    padding: var(--pd-lg);
+    border-radius: var(--br-lg);
+    border: none;
+    outline: none;
+    gap: var(--pd-md);
+    color: var(--text-color);
+    caret-color: var(--text-color);
+}
+
+.modal .center button{
+    background-color: var(--btn-color);
+    padding: var(--pd-sm);
+    border: none;
+    outline: none;
+    border-radius: var(--br-md);
+    gap: var(--pd-md);
+    width: fit-content;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.task.overdue {
+    border-left: 5px solid var(--btn-color);
+    background-color: rgba(148, 35, 35, 0.853);
+}
+
+.task .date {
+    font-size: var(--fs-sm);
+    opacity: 0.8;
+    
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(2);
+    cursor: pointer;
+}
