@@ -190,3 +190,85 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1) brightness(2);
     cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: var(--pd-md);
+    }
+
+    nav .left {
+        font-size: var(--fs-md);
+    }
+
+    nav button {
+        padding: var(--pd-sm) var(--pd-md);
+        font-size: var(--fs-sm);
+        border-radius: var(--br-md);
+    }
+
+
+    section {
+        flex-direction: column;
+        gap: var(--pd-md);
+        padding: var(--pd-md);
+    }
+
+    section .task-column {
+        padding: var(--pd-md);
+        border-radius: var(--br-lg);
+    }
+
+   
+    .task-column .heading {
+        font-size: var(--fs-sm);
+    }
+
+    .task {
+        padding: var(--pd-sm);
+        gap: var(--pd-sm);
+        border-radius: var(--br-md);
+    }
+
+    .task h2 {
+        font-size: var(--fs-md);
+    }
+
+    .task p {
+        font-size: var(--fs-sm);
+    }
+
+    .task .date {
+        font-size: var(--fs-xs);
+    }
+
+    .task button {
+        padding: var(--pd-sm);
+        font-size: var(--fs-xs);
+        border-radius: var(--br-sm);
+    }
+
+   
+    .modal .center {
+        width: 90%;
+        padding: var(--pd-md);
+        border-radius: var(--br-lg);
+    }
+
+    .modal .center input,
+    .modal .center textarea {
+        padding: var(--pd-md);
+        font-size: var(--fs-sm);
+        border-radius: var(--br-md);
+    }
+
+    .modal .center textarea {
+        min-height: 6rem;
+    }
+
+    .modal .center button {
+        font-size: var(--fs-sm);
+        padding: var(--pd-sm) var(--pd-md);
+        border-radius: var(--br-md);
+    }
+}
